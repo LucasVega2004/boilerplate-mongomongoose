@@ -5,19 +5,10 @@ const MongoUser = process.env.MONGO_USER;
 const Mongopassword = process.env.MONGO_PASSWORD
 const conectionString = `${URI}${MongoUser}:${Mongopassword}`;
 
-mongoose.connect(conectionString, { useNewUrlParser: true, useUnifiedTopology: true });
-let Person;
-const personSchema = new mongoose.Schema({
-  name: { type: String, required: true, unique: true },
-  age: { type: String, required: true, unique: true },
-  favoriteFoods: [String]
-});
+const Person = require('./models/personModel');
 
-// Crea el modelo
- Person = mongoose.model('Person', personSchema);
 
-// Exporta el modelo para su uso en otros archivos
-module.exports = Person;
+
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
 };
