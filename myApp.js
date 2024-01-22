@@ -10,7 +10,7 @@ let Person;
 const personSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
   age: { type: String, required: true, unique: true },
-  favoriteFoods: [{ type: String, required: true }]
+  favoriteFoods: [String]
 });
 
 // Crea el modelo
