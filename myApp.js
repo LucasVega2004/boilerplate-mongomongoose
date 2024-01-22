@@ -25,6 +25,7 @@ const createAndSavePerson = (done) => {
   });
 };
 
+
 const createManyPeople = (arrayOfPeople, done) => {
 
 
@@ -50,13 +51,15 @@ const findOneByFood = (food, done) => {
   Person.findOne({ favoriteFoods: food }, function (err, personFound) {
     if (err) return console.log(err);
     done(null, personFound);
-  });};
+  });
+};
 
 const findPersonById = (personId, done) => {
   Person.findById(personId, function (err, data) {
     if (err) return console.log(err);
     done(null, data);
-  });};
+  });
+};
 
 const findEditThenSave = (personId, done) => {
   const foodToAdd = "hamburger";
