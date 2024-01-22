@@ -15,7 +15,7 @@ const createAndSavePerson = (done) => {
     let janeFonda = new Person({ name: "Jane Fonda", age: 84, favoriteFoods: ["eggs", "fish", "fresh fruit"] });
 
     janeFonda.save(function (err, data) {
-      if (err) return console.error(err);
+      if (err) callback(err,null);
       done(null, data)
     });
 
