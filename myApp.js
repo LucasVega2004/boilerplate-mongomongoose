@@ -6,7 +6,7 @@ const Mongopassword = process.env.MONGO_PASSWORD
 const conectionString = `${URI}${MongoUser}:${Mongopassword}`;
 
 mongoose.connect(conectionString, { useNewUrlParser: true, useUnifiedTopology: true });
-
+let Person;
 const personSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
   age: { type: String, required: true, unique: true },
@@ -14,10 +14,10 @@ const personSchema = new mongoose.Schema({
 });
 
 // Crea el modelo
-const Person = mongoose.model('Person', personSchema);
+ Person = mongoose.model('Person', personSchema);
 
 // Exporta el modelo para su uso en otros archivos
-module.exports = User;
+module.exports = Person;
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
 };
