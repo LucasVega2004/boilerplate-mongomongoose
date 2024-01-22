@@ -11,16 +11,20 @@ const Person = require('./models/personModel');
 
 
 const createAndSavePerson = (done) => {
-  
-    let janeFonda = new Person({ name: "Jane Fonda", age: 84, favoriteFoods: ["eggs", "fish", "fresh fruit"] });
 
-    janeFonda.save(function (err, data) {
-      if (err) callback(err,null);
+  let janeFonda = new Person({ name: "Jane Fonda", age: 84, favoriteFoods: ["eggs", "fish", "fresh fruit"] });
+
+  janeFonda.save(function (err, data) {
+    if (err) {
+      callback(err, null)
+    }
+
+    else {
       done(null, data)
-    });
-
-  done(null /*, data*/);
+    }
+  });
 };
+
 
 const createManyPeople = (arrayOfPeople, done) => {
   done(null /*, data*/);
