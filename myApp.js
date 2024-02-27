@@ -10,35 +10,35 @@ const Person = require('./models/personModel');
 
 
 
-const createAndSavePerson = (done) => {
+// const createAndSavePerson = (done) => {
 
-  let janeFonda = new Person({ name: "Jane Fonda", age: 84, favoriteFoods: ["eggs", "fish", "fresh fruit"] });
+//   let janeFonda = new Person({ name: "Jane Fonda", age: 84, favoriteFoods: ["eggs", "fish", "fresh fruit"] });
 
-  janeFonda.save(function (err, data) {
-    if (err) {
-      done(err, null)
-    }
+//   janeFonda.save(function (err, data) {
+//     if (err) {
+//       done(err, null)
+//     }
 
-    else {
-      done(null, data)
-    }
-  });
-};
-
-
-const createManyPeople = (arrayOfPeople, done) => {
+//     else {
+//       done(null, data)
+//     }
+//   });
+// };
 
 
-  Person.create(arrayOfPeople, function (err, people) {
-    if (err) {
-      done(err, null)
-    }
+// const createManyPeople = (arrayOfPeople, done) => {
 
-    else {
-      done(null, people);
-    }
-  });
-};
+
+//   Person.create(arrayOfPeople, function (err, people) {
+//     if (err) {
+//       done(err, null)
+//     }
+
+//     else {
+//       done(null, people);
+//     }
+//   });
+// };
 
 const findPeopleByName = (personName, done) => {
   Person.find({ name: personName }, function (err, personFound) {
