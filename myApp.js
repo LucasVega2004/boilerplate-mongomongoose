@@ -4,7 +4,7 @@ const URI = process.env.MONGO_URI;
 const MongoUser = process.env.MONGO_USER;
 const Mongopassword = process.env.MONGO_PASSWORD
 const conectionString = `${URI}${MongoUser}:${Mongopassword}`;
-mongoose.connect(conectionString, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(`mongodb + srv://Lucas:r4FLPjUJoSPR3Tv6@dpl.nnpf5kk.mongodb.net/`, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const Person = require('./models/personModel');
 
@@ -54,7 +54,7 @@ const findOneByFood = (food, done) => {
   });
 };
 
-const findPersonById = function(personId, done) {
+const findPersonById = function (personId, done) {
   Person.findById(personId, function (err, data) {
     if (err) return console.log(err);
     done(null, data);
