@@ -4,7 +4,7 @@ const URI = process.env.MONGO_URI;
 const MongoUser = process.env.MONGO_USER;
 const Mongopassword = process.env.MONGO_PASSWORD
 const conectionString = `${URI}${MongoUser}:${Mongopassword}`;
-mongoose.connect(conectionString, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(`mongodb+srv://LucasVega:Pringles15.@dpl.nnpf5kk.mongodb.net/`, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const Person = require('./models/personModel');
 
